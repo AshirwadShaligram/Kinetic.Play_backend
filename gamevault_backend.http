@@ -1,0 +1,39 @@
+@__HostAddress = http://localhost:5167
+
+# AUTH: REGISTER User Registeration Seller | Customer
+POST {{__HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "user3@gmail.com",
+    "password": "123456",
+    "role": "Customer"
+}
+
+###
+# AUTH: LOGIN User
+POST {{__HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "user1@gmail.com",
+    "password": "123456"
+}
+
+#ADMIN
+# Customer info API
+###
+GET {{__HostAddress}}/api/admin/customer/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIzYTFhM2VlLTlhYmMtNGRjOC04MGJhLTI1YWRmYTU1N2Q5MSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg3NzMyMjUyLCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.zJjFB9qgOPRma8JT40ix_KRbubTibvJOkK5orQ-lyIo
+
+###
+# Seller info API
+GET {{__HostAddress}}/api/admin/seller/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIzYTFhM2VlLTlhYmMtNGRjOC04MGJhLTI1YWRmYTU1N2Q5MSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg3NzMyMjUyLCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.zJjFB9qgOPRma8JT40ix_KRbubTibvJOkK5orQ-lyIo
+
+
+#SELLER
+###
+
+#CUSTOMER
+###

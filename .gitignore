@@ -1,0 +1,69 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# User secrets
+secrets.json
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test results
+TestResults/
+*.trx
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# ASP.NET generated files
+wwwroot/lib/
+
+# Publish output
+publish/
+*.publishsettings
+
+# Temporary files
+*.tmp
+*.temp
+
+# Azure Functions local settings
+local.settings.json
