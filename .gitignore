@@ -30,6 +30,7 @@ packages/
 
 # User secrets
 secrets.json
+**/appsettings.json
 
 # Local databases
 *.db
