@@ -13,8 +13,11 @@ public class Product
     public string TitleImageUrl { get; set; } = string.Empty;
 
     // Category Foriegn Key
-    public int CategoryId { get; set; }
-    public Category Category { get; set; } = null;
+    public Guid CategoryId { get; set; }
+    public Category Category { get; set; } = null!;
+
+     public Guid SubCategoryId { get; set; }
+    public SubCategory SubCategory { get; set; } = null!;
 
     // Seller Foriegn Key
     public Guid UserId { get; set; }

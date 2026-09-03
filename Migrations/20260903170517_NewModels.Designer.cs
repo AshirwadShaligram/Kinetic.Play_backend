@@ -8,11 +8,11 @@ using gamevault_backend.Data;
 
 #nullable disable
 
-namespace _.Migrations
+namespace gamevault_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260826090958_NewUserModel")]
-    partial class NewUserModel
+    [Migration("20260903170517_NewModels")]
+    partial class NewModels
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,11 +22,15 @@ namespace _.Migrations
 
             modelBuilder.Entity("gamevault_backend.Models.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CategoryImage")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CategoryImagePublicId")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -156,8 +160,8 @@ namespace _.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("INTEGER");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
@@ -174,6 +178,9 @@ namespace _.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("SubCategoryId")
                         .HasColumnType("TEXT");
 
                     b.PrimitiveCollection<string>("Tags")
@@ -199,6 +206,8 @@ namespace _.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("DealId");
+
+                    b.HasIndex("SubCategoryId");
 
                     b.ToTable("Products");
                 });
@@ -268,6 +277,29 @@ namespace _.Migrations
                     b.ToTable("SellerProfile");
                 });
 
+            modelBuilder.Entity("gamevault_backend.Models.SubCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsVisible")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SubCategoryName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("SubCategories");
+                });
+
             modelBuilder.Entity("gamevault_backend.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -334,7 +366,7 @@ namespace _.Migrations
                     b.HasOne("gamevault_backend.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("gamevault_backend.Models.Deal", "Deal")
@@ -342,9 +374,17 @@ namespace _.Migrations
                         .HasForeignKey("DealId")
                         .OnDelete(DeleteBehavior.SetNull);
 
+                    b.HasOne("gamevault_backend.Models.SubCategory", "SubCategory")
+                        .WithMany("Products")
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Category");
 
                     b.Navigation("Deal");
+
+                    b.Navigation("SubCategory");
                 });
 
             modelBuilder.Entity("gamevault_backend.Models.SellerProfile", b =>
@@ -358,12 +398,30 @@ namespace _.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("gamevault_backend.Models.SubCategory", b =>
+                {
+                    b.HasOne("gamevault_backend.Models.Category", "Category")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("gamevault_backend.Models.Category", b =>
+                {
+                    b.Navigation("Products");
+
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("gamevault_backend.Models.Deal", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("gamevault_backend.Models.Deal", b =>
+            modelBuilder.Entity("gamevault_backend.Models.SubCategory", b =>
                 {
                     b.Navigation("Products");
                 });
