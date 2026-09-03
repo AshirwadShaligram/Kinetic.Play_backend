@@ -1,8 +1,11 @@
 using System.Text;
 using System.Text.Json.Serialization;
 using gamevault_backend.Data;
+using gamevault_backend.Models;
 using gamevault_backend.Services.Admin;
 using gamevault_backend.Services.Auth;
+using gamevault_backend.Services.Category;
+using gamevault_backend.Services.Image;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -54,6 +57,11 @@ builder.Services.AddCors(options => {
     );
 });
 
+// Cloudinary Upload services configuration
+builder.Services.Configure<CloudinarySettings>(
+    builder.Configuration.GetSection("CloudinarySettings")
+);
+
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
@@ -69,6 +77,9 @@ builder.Services.AddScoped<ISellerInfoInterface, SellerInfoService>();
 
 // CUSTOMER SERVIECS
 
+// COMMON SERVICES
+builder.Services.AddScoped<ICategoryInterface, CategoryService>();
+builder.Services.AddScoped<IImageInterface, ImageService>();
 
 
 var app = builder.Build();
@@ -84,7 +95,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Root endpoint
-app.MapGet("/", () => "GameVault server is running.");
+app.MapGet("/", () => "Pachama server is running.");
 
 app.Run();
 

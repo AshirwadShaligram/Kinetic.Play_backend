@@ -1,6 +1,6 @@
 namespace gamevault_backend.Models;
 
-public class Cloudinary
+public class CloudinarySettings
 {
     public string CloudName { get; set; } = string.Empty;
     public string ApiKey { get; set; } = string.Empty;
