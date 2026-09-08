@@ -3,8 +3,9 @@ using System.Text.Json.Serialization;
 using gamevault_backend.Data;
 using gamevault_backend.Models;
 using gamevault_backend.Services.Admin;
+using gamevault_backend.Services.Admin.Category;
+using gamevault_backend.Services.Admin.SubCategory;
 using gamevault_backend.Services.Auth;
-using gamevault_backend.Services.Category;
 using gamevault_backend.Services.Image;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -72,13 +73,14 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 // ADMIN SERVICES
 builder.Services.AddScoped<ICustomerInfoInterface, CustomerInfoService>();
 builder.Services.AddScoped<ISellerInfoInterface, SellerInfoService>();
+builder.Services.AddScoped<ICategoryInterface, CategoryService>();
+builder.Services.AddScoped<ISubCategoryInterface, SubCategoryService>();
 
 // SELLER SERVICES
 
 // CUSTOMER SERVIECS
 
 // COMMON SERVICES
-builder.Services.AddScoped<ICategoryInterface, CategoryService>();
 builder.Services.AddScoped<IImageInterface, ImageService>();
 
 

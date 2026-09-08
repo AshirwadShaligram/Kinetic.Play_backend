@@ -5,9 +5,9 @@ POST {{__HostAddress}}/api/auth/register
 Content-Type: application/json
 
 {
-    "email": "user3@gmail.com",
+    "email": "user1@gmail.com",
     "password": "123456",
-    "role": "Customer"
+    "role": "Admin"
 }
 
 ###
@@ -20,20 +20,31 @@ Content-Type: application/json
     "password": "123456"
 }
 
-#ADMIN
+#----------------------------------ADMIN-----------------------------------
+# 1] INFO API
 # Customer info API
 ###
 GET {{__HostAddress}}/api/admin/customer/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIzYTFhM2VlLTlhYmMtNGRjOC04MGJhLTI1YWRmYTU1N2Q5MSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg3NzMyMjUyLCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.zJjFB9qgOPRma8JT40ix_KRbubTibvJOkK5orQ-lyIo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjFjMThlYTAwLTJjNGMtNGEwMy05NDVhLTUwZGM4ZmFlMWEwMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg4NTE3MDA4LCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.Z63inx2XkWZfLX4_6JqVafpAJWg5OiWnLw4OlNejQ04
 
 ###
 # Seller info API
 GET {{__HostAddress}}/api/admin/seller/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIzYTFhM2VlLTlhYmMtNGRjOC04MGJhLTI1YWRmYTU1N2Q5MSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg3NzMyMjUyLCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.zJjFB9qgOPRma8JT40ix_KRbubTibvJOkK5orQ-lyIo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjFjMThlYTAwLTJjNGMtNGEwMy05NDVhLTUwZGM4ZmFlMWEwMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg4NTE3MDA4LCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.Z63inx2XkWZfLX4_6JqVafpAJWg5OiWnLw4OlNejQ04
 
+###
+# 2] CATEGORIES
 
-#SELLER
+# Create Category
+POST {{__HostAddress}}/api/admin/category/create-category
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjFjMThlYTAwLTJjNGMtNGEwMy05NDVhLTUwZGM4ZmFlMWEwMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg4NTE3MDA4LCJpc3MiOiJHYW1ldmF1bHQiLCJhdWQiOiJHYW1ldmF1bHRVc2VycyJ9.Z63inx2XkWZfLX4_6JqVafpAJWg5OiWnLw4OlNejQ04
+
+{
+    
+}
+
+#---------------------------------SELLER-----------------------------------
 ###
 
-#CUSTOMER
+#---------------------------------CUSTOMER---------------------------------
 ###
