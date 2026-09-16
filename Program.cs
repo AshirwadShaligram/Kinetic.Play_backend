@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
-var secret = builder.Configuration["Jwt:SecretKey"];
+var secret = builder.Configuration["jwt:key"];
 
 // JWT Secret check
 if (string.IsNullOrEmpty(secret))

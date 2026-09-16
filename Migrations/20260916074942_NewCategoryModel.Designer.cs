@@ -11,8 +11,8 @@ using gamevault_backend.Data;
 namespace gamevault_backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260904092552_UpdatedCategoryModel")]
-    partial class UpdatedCategoryModel
+    [Migration("20260916074942_NewCategoryModel")]
+    partial class NewCategoryModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

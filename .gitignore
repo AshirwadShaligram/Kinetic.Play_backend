@@ -27,6 +27,7 @@ packages/
 .env
 .env.*
 !.env.example
+gamevault_backend.http
 
 # User secrets
 secrets.json
@@ -45,6 +46,9 @@ secrets.json
 # OS files
 .DS_Store
 Thumbs.db
+
+
+
 
 # Test results
 TestResults/

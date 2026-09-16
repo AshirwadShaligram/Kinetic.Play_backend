@@ -35,7 +35,7 @@ public class JwtService : IJwtService
 
         var key = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(
-                _config["Jwt:SecretKey"]!
+                _config["jwt:key"]!
             )
         );
 

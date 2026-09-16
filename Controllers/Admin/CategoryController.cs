@@ -105,7 +105,7 @@ public class CategoryController : ControllerBase
     // PATCH {HOST_ADDRESS/api/admin/category/{guid}}
 
     [Authorize(Roles = "Admin")]
-    [HttpPatch("isVisible/{id:guid}")]
+    [HttpPatch("toggle/{id:guid}")]
     public  async Task<IActionResult> ToggleCategoryVisibility(Guid id)
     {
        var isVisible = await _categoryInterface.ToggleCategoryVisibilityAsync(id);

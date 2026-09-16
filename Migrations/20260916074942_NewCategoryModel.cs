@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace gamevault_backend.Migrations
 {
     /// <inheritdoc />
-    public partial class NewModels : Migration
+    public partial class NewCategoryModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,9 +16,13 @@ namespace gamevault_backend.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CategoryTitle = table.Column<string>(type: "TEXT", nullable: false),
-                    CategoryImage = table.Column<string>(type: "TEXT", nullable: false),
-                    CategoryImagePublicId = table.Column<string>(type: "TEXT", nullable: false)
+                    Title = table.Column<string>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    Image = table.Column<string>(type: "TEXT", nullable: false),
+                    ImagePublicId = table.Column<string>(type: "TEXT", nullable: false),
+                    ActiveProducts = table.Column<int>(type: "INTEGER", nullable: false),
+                    Logo = table.Column<string>(type: "TEXT", nullable: false),
+                    IsVisible = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,7 +53,7 @@ namespace gamevault_backend.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SubCategoryName = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
                     IsVisible = table.Column<bool>(type: "INTEGER", nullable: false),
                     CategoryId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },

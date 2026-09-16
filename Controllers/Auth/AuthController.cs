@@ -46,7 +46,7 @@ public class AuthController : ControllerBase
             new CookieOptions
             {
                 HttpOnly = true,
-                SameSite = SameSiteMode.Strict,
+                SameSite = SameSiteMode.Lax,
                 Secure = false,
                 Expires = DateTime.UtcNow.AddDays(7)
             }
@@ -73,7 +73,7 @@ public class AuthController : ControllerBase
             {
                 Path = "/",
                 Secure = false,
-                SameSite = SameSiteMode.Strict
+                SameSite = SameSiteMode.Lax
             }
         );
 
@@ -100,7 +100,7 @@ public class AuthController : ControllerBase
                 new CookieOptions
                 {
                     HttpOnly = true,
-                    SameSite = SameSiteMode.Strict,
+                    SameSite = SameSiteMode.Lax,
                     Secure = false,
                     Expires = DateTime.UtcNow.AddDays(7)
                 }

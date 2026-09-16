@@ -43,6 +43,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
     
 }
 
+###
+# Toggle show category 
+PATCH {{__HostAddress}}/api/admin/category/toggle/56a52e50-8263-47af-8af6-953ce937eb8d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJlMGNkYThhLWY3YjktNDljZi04ZTk5LTU5NzJlY2RmYmE5OCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg5NTUzOTU4LCJpc3MiOiJHYW1lVmF1bHQiLCJhdWQiOiJHYW1lVmF1bHRVc2VycyJ9.BziE2HLPFPnwYdZYWYJfj9_evzciud0NAYyJ_GKYIME
+
+{
+
+}
+
+###
+# Show All category 
+GET {{__HostAddress}}/api/admin/category/get-all-categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJlMGNkYThhLWY3YjktNDljZi04ZTk5LTU5NzJlY2RmYmE5OCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzg5NTUzOTU4LCJpc3MiOiJHYW1lVmF1bHQiLCJhdWQiOiJHYW1lVmF1bHRVc2VycyJ9.BziE2HLPFPnwYdZYWYJfj9_evzciud0NAYyJ_GKYIME
+
 #---------------------------------SELLER-----------------------------------
 ###
 
