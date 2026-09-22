@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>gamevault_backend</RootNamespace>
+    <RootNamespace>kinetic.play_backend</RootNamespace>
     <UserSecretsId>b326d9c5-a78d-4204-8bb5-124c57271258</UserSecretsId>
   </PropertyGroup>
 

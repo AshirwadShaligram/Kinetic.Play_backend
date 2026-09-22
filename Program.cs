@@ -97,7 +97,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Root endpoint
-app.MapGet("/", () => "Pachama server is running.");
+app.MapGet("/", () => "Kinetic.Play server is running.");
 
 app.Run();
 
